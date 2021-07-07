@@ -1,4 +1,5 @@
 import React from "react";
+import ApprovalCard from "./ApprovalCard";
 import CommentCard from "./CommentCard";
 
 class CommentsList extends React.Component {
@@ -45,7 +46,7 @@ class CommentsList extends React.Component {
     render() {
         let allCommentsList = this.state.allComments.map(
             comment => {
-                return <CommentCard key={comment.id} data={comment} onVoteClick={this.onVoteClick}/>
+                return <ApprovalCard key={comment.id} data={comment} onVoteClick={this.onVoteClick}/>
             }
         );
         let goodCommentsList = this.state.goodComments.map(

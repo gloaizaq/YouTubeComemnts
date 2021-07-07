@@ -1,8 +1,4 @@
 const CommentCard = (props) => {
-    const onVoteClick = (vote) => {
-        props.onVoteClick(props.data.id, vote);
-    }
-
     return (
         <div className="ui card">
             <div className="content">
@@ -14,14 +10,7 @@ const CommentCard = (props) => {
                     {props.data.snippet.topLevelComment.snippet.textOriginal}
                 </div>
             </div>
-            <div className="ui two bottom attached buttons">
-                <div onClick={() => onVoteClick('good')} className="ui button">
-                    Good
-                </div>
-                <div onClick={() => onVoteClick('bad')} className="ui button">
-                    Bad
-                </div>
-            </div>
+            {props.children}
         </div>
     );
 }
